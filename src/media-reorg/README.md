@@ -17,5 +17,7 @@ Date priority: DateTimeOriginal → CreateDate (+66 years if before 1970, a phon
 | 4 | `run-all.sh` | Runs batches 2–13 in order (run, then verify) and stops on the first failure. |
 | 5 | `trdb.py` | Turkish letters in file names → ASCII (`ç→c`, `ğ→g`, `ı→i`, …): `dryrun`, `run`, `verify`, `dirs`, `status`. |
 | 6 | `casefix.py` | Folders longer than 5 chars → first letter upper, rest lower (skips `DCIM*` and dot folders). Dry run by default; `--apply` renames. |
+| 7 | `dupes.py` | Read-only scan for byte-identical files (size → first 64 KB → full sha256) → `dupes.tsv`. |
+| 8 | `dupdb.py` | Moves extra copies to `Duplicates/<same path>` (kept: non-Archive, no `-N` suffix, shortest path). Throttled 1–2 s per move; retries when NFS falsely reports a file missing. |
 
 Data files (inventory, plans, databases) are not in the repo: they list private file names.
